@@ -6,11 +6,12 @@ import (
 	"time"
 
 	"github.com/CodeSync/internal/config"
+	"github.com/CodeSync/internal/server"
 )
 
 func main() {
 	cfg := config.Load()
-	mux := http.NewServeMux()
+	mux := server.NewRouter()
 
 	srv := &http.Server{
 		Addr:         cfg.Addr,
