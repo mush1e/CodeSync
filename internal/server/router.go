@@ -5,6 +5,8 @@ import "net/http"
 func NewRouter() *http.ServeMux {
 	mux := http.NewServeMux()
 
+	// mux.HandleFunc()
+
 	fs := http.FileServer(http.Dir("public"))
 	mux.Handle("/static/", http.StripPrefix("/static/", fs))
 
